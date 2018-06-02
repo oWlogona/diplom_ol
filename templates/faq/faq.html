@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}
+    FAQ
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/faq_style.css' %}">
+{% endblock %}
+{% block content %}
+            <hr>
+            <span class="page_title">FAQ</span>
+            <div class="container answer_block">
+
+                <div class="shipping">
+                    <span class="title_block">Технические</span>
+                    {% for item_ship in form_ship %}
+                    <div class="contaner block_question">
+                        <span class="title_question">{{ item_ship.text_asking }}</span>
+                        <p class="text_answer">{{ item_ship.text_answer }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="returns">
+                    <span class="title_block">Покупка</span>
+                    {% for item_return in form_return %}
+                    <div class="contaner block_question">
+                        <span class="title_question">{{ item_return.text_asking }}</span>
+                        <p class="text_answer">{{ item_return.text_answer }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+{% endblock %}

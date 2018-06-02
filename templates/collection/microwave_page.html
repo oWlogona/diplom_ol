@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+	Мікрохвильовки
+{% endblock %}
+
+{% block styles %}
+	<link rel="stylesheet" href="{% static 'css/collection_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2 class="name_content">Мікрохвильовки</h2>
+<div class="container block_products">
+	{% for item in products_microwave %}
+			<div class="card_product">
+			    <a href="{% url 'product' item.product.id %}">
+			        <img src="{{ item.image }}" alt="" class="card_image">
+			        <div class="product_name">{{ item.product.name }}</div>
+			        <div class="product_price">${{ item.product.price }}</div>
+			    </a>
+			</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

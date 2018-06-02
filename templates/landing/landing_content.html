@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+   Housering
+{% endblock %}
+
+{% block styles %}
+   <link rel="stylesheet" href="{% static 'css/landing_style.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container baners">
+   <img src="{% static 'media/slide_1.jpg' %}" alt="baners_sells" class="baners_sells">
+</div>
+<div class="container ban_second">
+   <div class="ban_find">
+      <img src="{% static 'media/slide_2.jpg' %}" alt="" height="300" width="650px">
+   </div>
+   <div class="subscribe_block">
+      <p>Хочете бути першими хто дізнається про відкриття нашого магазину ???</p>
+      <form action="" method="post">
+         {% csrf_token %}
+         <input type="text" name="email" placeholder="Email Address">
+         <input type="submit" value="Подписаться" class="btn btn_subscribe">
+      </form>
+   </div>
+</div>
+<div class="block_collection">
+   <div class="link_collection">
+      <a href="/collection">
+      Виберіть категорію <br>
+       Для перегляду товарів>
+      </a>
+   </div>
+   <div class="block_products">
+      {% for product in products_ordered %}
+         {%include 'card_product.html' %}
+      {% endfor %}
+   </div>
+</div>
+
+<div class="block_collection">
+   <a href="/fridge" class='link_type_product'>Холодильники</a>
+   <div class="block_products">
+      {% for product in products_fridge %}
+         {%include 'card_product.html' %}
+      {% endfor %}
+   </div>
+</div>
+
+<div class="block_collection">
+   <a href="/microwave" class='link_type_product'>Мікрохвильовки</a>
+   <div class="block_products">
+      {% for product in products_microwave %}
+         {%include 'card_product.html' %}
+      {% endfor %}
+   </div>
+</div>
+
+<div class="block_collection">
+   <a href="/multiwriters" class='link_type_product'>Мультиварки</a>
+   <div class="block_products">
+      {% for product in products_coffee %}
+         {%include 'card_product.html' %}
+      {% endfor %}
+   </div>
+</div>
+
+<div class="block_collection">
+   <a href="/coffee" class='link_type_product'>Кавоварки</a>
+   <div class="block_products">
+      {% for product in products_multiwriters %}
+         {%include 'card_product.html' %}
+      {% endfor %}
+   </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+.page_title {
+	display: block;
+	margin-top: 25px;
+	font-family: Times New Roman, serif;
+	font-size: 24px;
+	color: #3e3939;
+}
+.answer_block {
+	display: flex;
+	justify-content: space-between;
+}
+
+.shipping,
+.returns {
+	width: 450px;
+	margin: 20px 10px;
+	padding: 10px 15px;
+}
+
+.title_block {
+	display: block;
+	text-align: left;
+	font-size: 1.5em;
+	letter-spacing: 0.5em;
+	color: #3e3939;
+}
+
+.block_question {
+	margin: 10px;
+	padding: 10px 15px;
+	background-color: #efebeb;
+}
+
+.block_question .title_question {
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: 0.4em;
+}
+
+.block_question .text_answer {
+	font-size: 1em;
+	font-style: italic;
+	letter-spacing: 0.2em;
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Контакти
+{% endblock %}
+
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container_contact">
+    <div class="contact_inform">
+        <div class="text_contact">
+            <br>OUR STORE
+
+            <br>500 Terry Francois Street
+
+            <br>San Francisco, CA 94158
+
+            <br>M-F: 9am- 6pm EST
+
+            <br>Tel: 123-456-7890
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2103.427419843064!2d-0.37977698451788466!3d51.88744137969942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487637d6951c256d%3A0xf50e76cf01a67e9e!2zMSBIaWdoYW0gRHIsIEx1dG9uIExVMiwg0JLQtdC70LjQutC-0LHRgNC40YLQsNC90LjRjw!5e1!3m2!1sru!2sua!4v1521240720750" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <img src="{% static 'media/ca2a5a_571b74825fc74849b60d5205bf0c4434.webp' %}" alt="" class="img_contact">
+</div>
+<div class="container_contact">
+    <div class="adress_contact">
+        <span class="title_us">QUESTIONS?</span>
+        <p>
+            <br><span>Contact us</span>
+
+            <br><span>1-800-000-0000 Toll Free</span>
+
+            <br><span><a href="mailto:info@mysite.com">info@mysite.com</a></span>
+
+            <br><span>Or use the contact form and we <br>will be with you shortly.</span>
+        </p>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="{{ form.name.name }}" placeholder="Name *">
+        <br>
+        <input type="text" name="{{ form.email.name }}" placeholder="Email *">
+        <br>
+        <textarea placeholder="Text ..." rows="10" name="{{ form.text_asking.name }}"></textarea>
+        <br>
+        <input type="submit" value="SENT" class="btn_contact">
+    </form>
+</div>
+{% endblock %}

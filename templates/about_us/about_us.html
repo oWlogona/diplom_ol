@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Про нас
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about_us">
+    <div class="content_about">
+        <div class="main_about">
+            <span class="title_about">ABOUT US</span>
+            <br>
+            <p>We’re a couple of passionate soles, dedicated to carrying the most exclusive designers and showcasing the latest trends</p>
+        </div>
+        <span class="text_about">
+            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+            <p>This is a great space to write long text about your company and your services.</p>
+        </span>
+    </div>
+    <img class="img_about_us" src="{% static 'media/slide_3.jpg' %}" alt="img_about_us" title="About US" width="300">
+</div>
+
+{% endblock %}

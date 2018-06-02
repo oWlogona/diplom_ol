@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+   {{ product.name }}
+{% endblock %}
+
+{% block styles %}
+   <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+{% endblock %}
+{% block content %}
+   <div class="product_inform">
+      {% for image_item in product.productimage_set.all %}
+         <img src="/{{ image_item.image.url }}" alt="" class="product_image">
+      {% endfor %}
+      <div class="about_product">
+            <h3>{{ product.name }}</h3>
+         <br>
+         <span class="price_product">
+            <b style="font-size: 18px;">Цена:</b> {{ product.price }} грн.
+         </span>
+         <br>
+         <p>{{ product.description }}</p>
+            <form action="{% url 'bassker_adding' %}" id="form_buying_product" method="post">
+            {% csrf_token %}
+            <input type="number" min=0 step=1 name='number' id="amount" placeholder="Колличество">
+            <input type="submit" class="btn_add_to_card" 
+            data-product_id = "{{ product.id }}"
+            data-name = "{{ product.name }}"
+            data-price = "{{ product.price }}"
+            id="submit_btn"
+            value="В КОРЗИНУ" >
+         </form>
+      </div>
+   </div>
+{% endblock content%}

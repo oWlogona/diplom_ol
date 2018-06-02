@@ -1,0 +1,201 @@
+
+.baners {
+	margin-top: 25px;
+	position: relative;
+}
+
+.baners_sells {
+	width: 100%;
+	max-height: 450px;
+}
+.baner_sells {
+	display: block;
+	position: absolute;
+	top: 25px;
+	padding: 20px 25px;
+	left: 25px;
+	width: 250px;
+	background-color: rgba(255, 255, 255, 0.5);
+	line-height: 32px;
+}
+
+.baner_sells p {
+	font-weight: normal;
+	font-size: 36px;
+	letter-spacing: 0.4em;
+	font-style: italic;
+	font-family: raleway, sans-serif;
+}
+
+.btn_collection {
+	background-color: #fff;
+	width: 90%;
+	margin-bottom: 25px;
+	line-height: 10px;
+}
+
+.btn_collection a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: 15px 15px;
+	font-family: raleway, sans-serif;
+	color: #000;
+	font-style: italic;
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	font-weight: 600;
+}
+.btn a:hover {
+	background-color: #000;
+	color: #fff;
+}
+.ban_second {
+	display: flex;
+	justify-content: space-around;
+}
+.ban_find {
+	position: relative;
+	margin-top: 10px;
+}
+
+.shop_boots {
+	position: absolute;
+	top: 95px;
+	left: 35px;
+	letter-spacing: 0.4em;
+	font-family: raleway, sans-serif;
+	font-weight: normal;
+}
+
+.shop_boots a {
+	font-size: 34px;
+	text-decoration: none;
+	color: #000;
+}
+.sent_sh {
+	font-size: 26px;
+	font-style: italic;
+}
+.sent_shop {
+	color: #fff;
+}
+.subscribe_block {
+	background-color: rgba(273, 250, 100, 1);
+	margin: 10px 0 0 10px;
+	box-sizing: border-box;
+	padding: 35px 25px;
+	font-size: 16px;
+	font-style: italic;
+	letter-spacing: 0.2em;
+	font-family: raleway, sans-serif;
+	border: 2px solid #000;
+	border: 1px solid rgba(253, 230, 129, 1);
+    outline: 2px solid #000;
+    outline-offset: -10px;
+    outline-style: outset;
+}
+.subscribe_block form {
+	margin-top: 45px;
+}
+
+input[type='text'] {
+	width: 90%;
+	padding: 10px;
+	background-color: rgba(273, 250, 100, 1);
+	border: none;
+	font-size: 12px;
+	outline: 1px solid #000;
+	color: #000;
+	font-style: italic;
+}
+.btn_subscribe {
+	border: none;
+	padding: 10px 15px;
+	background-color: #fff;
+	width: 100%;
+	margin: 10px 0 10px 0;
+}
+
+.btn_subscribe:hover {
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+}
+
+.block_collection {
+	margin-top: 10px;
+    padding: 20px;
+}
+.block_collection:nth-of-type(2n+1) {
+	background-color: #cecece;
+}
+
+.block_collection:not(:last-of_type) {
+	margin-bottom: -60px;
+}
+.link_collection{
+	text-align: center;
+}
+
+
+.link_collection a{
+	color: #000;
+	text-decoration: none;
+	font-style: italic;
+	font-family: Times New Roman, sans-serif;
+	font-weight: normal;
+	font-size: 28px;
+	letter-spacing: 0.4em;
+}
+
+.block_products {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 25px;
+}
+
+.card_product {
+    width: 30%;
+    height: 280px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card_product>a {
+    color: #000;
+    text-decoration: none;
+}
+
+.card_product .card_image {
+	width: 80%;
+    height: 70%;
+}
+.product_name {
+	display: block;
+	font-size: 26px;
+	width: 190px;
+	margin: 0 auto;
+}
+
+.product_price {
+	font-style: italic;
+	font-size: 22px;
+}
+.name_content {
+	letter-spacing: 0.2em;
+	font-weight: normal;
+	font-family: raleway, sans-serif;
+	font-size: 26px;
+}
+
+.link_type_product {
+	font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-style: italic;
+    letter-spacing: 0.5em;
+
+}

@@ -1,0 +1,42 @@
+.name_content {
+	letter-spacing: 0.2em;
+	font-weight: normal;
+	font-family: raleway, sans-serif;
+	font-size: 26px;
+}
+.block_products {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.card_product {
+	width: 250px;
+    height: 320px;
+    text-align: center;
+}
+.card_product>a {
+    color: #000;
+    text-decoration: none;
+}
+
+.card_product .card_image {
+	width: 80%;
+	height: 60%;
+}
+
+.product_name {
+	display: block;
+	font-size: 26px;
+	width: 190px;
+	margin: 0 auto;
+}
+
+.product_price {
+	font-style: italic;
+	font-size: 22px;
+}
+.link_more {
+	font-size: 14px;
+}

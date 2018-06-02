@@ -1,0 +1,37 @@
+{% load static %}
+<div class="header container">
+            <div class="main_menu">
+			   <div class="menu_item"><a href="/">Головна</a></div>
+			   <div class="menu_item"><a href="/collection">Категорії</a></div>
+			   <div class="menu_item"><a href="/about_us">Про нас</a></div>
+			   <div class="menu_item"><a href="/contact">Контакты</a></div>
+			   <div class="menu_item"><a href="/faq">FAQ</a></div>
+			   <div class="menu_item">
+			   		<div class="basket_container">
+			   			<a href="/checkout">Кошик
+			   				<span id='basket_total_amount'></span>
+			   				<span id='products_total_number'>
+			   					{% if products_total_amount %}
+			   						({{ products_total_amount }})
+			   					{% else %}
+			   						(0)
+			   					{% endif %}
+			   				</span>
+			   			</a>
+				   		<div class="basket_items hidden">
+				   			<ul class="basket_product" style="font-size: 12px;">
+				   			{% csrf_token %}
+								{% for product_in_basket in products_in_basket %}
+									<li>{{ product_in_basket.product.name }} {{ product_in_basket.number }} шт {{ product_in_basket.price_per_item }} UAN
+									</li>
+								{% endfor %}
+				   			</ul>
+				   		</div>
+			   		</div>
+			   	</div>
+			</div>
+            <div class="container">
+               <div class="logo_image"><img src="{% static 'media/ca2a5a_733d2214b9534175a43f83161015da7d.png' %}"></div>
+               <div class="title_of_site">ПОБУТОВА ТЕХНІКА</div>
+            </div>
+</div>

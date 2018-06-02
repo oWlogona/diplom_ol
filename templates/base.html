@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>
+         {% block page_title %}
+         {% endblock %}
+      </title>
+      <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+      {% block styles %}
+      {% endblock %}
+   </head>
+   <body>
+      <div class="main_container">
+         {%include 'navbar.html' %}
+            <div class="main container">
+                  {% block content %}
+                  {% endblock content %}
+            </div>
+         {% include 'footer.html' %}
+      </div>
+      <script src="{% static 'js/script.js' %}"></script>
+   </body>
+</html>

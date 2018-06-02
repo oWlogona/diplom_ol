@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+   Корзина
+{% endblock %}
+
+{% block styles %}
+   <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+   <hr>
+            <div class="container">
+               <div class="content_title center title_font">
+                  <h1>Товари в кошику</h1>
+               </div>
+               <div class="container">
+               {% if not products_in_basket %}
+                  <div class="container">
+                     <p>Кошик порожній</p>
+                  </div>
+               {% else %}
+                  <form action="" method="POST">
+                  {% csrf_token %}
+                  <table class="table_catalogi">
+                     <tr>
+                        <td>
+                           <label for="client_name">Iм'я:</label>
+                        </td>
+                        <td><input type="text" name="{{ form.name.html_name }}" id="client_name"></td>
+                     </tr>
+                     <tr>
+                        <td><label for="client_number">Телефон:</label></td>
+                        <td><input type="text" name="{{ form.phone.html_name }}" id="client_number" placeholder="+380-000-000-00"></td>
+                     </tr>
+                  </table>
+                     <table class="table_catalogi">
+                        <tr>
+                           <th>Назва товару</th>
+                           <th>Кількість</th>
+                           <th>Ціна за одиницю</th>
+                           <th>Загальна ціна</th>
+                        </tr>
+                        {% for product_in_basket in products_in_basket %}
+                        <tr>
+                           <td>{{ product_in_basket.product.name }}</td>
+                           <td>
+                              <input type="number" min="0" value="{{ product_in_basket.number }}" name="product_in_basket_{{ product_in_basket.id }}" class="product_in_basket_number">
+                           </td>
+                           <td>
+                              <span class="product_price">
+                                 {{ product_in_basket.price_per_item }}
+                              </span>
+                           </td>
+                           <td>
+                              <span class="total_product_in_amount">
+                                 {{ product_in_basket.total_price }}
+                              </span>
+                           </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                           <td colspan="3" style="text-align: right;"><b>Сума замовлення</b></td>
+                           <td>
+                              <span class="total_order">xx</span>
+                           </td>
+                        </tr>
+                     </table>
+                     <div class="block_btn">
+                        <input type="submit" class="btn btn_checkout" value="Подтвердить">
+                     </div>
+                  </form>
+               {% endif %}
+               </div>
+            </div>
+
+{% endblock %}
